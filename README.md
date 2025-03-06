@@ -9,7 +9,7 @@ Each student will implement a specific task in a Laravel 11 CRUD application. Th
 
 | **Student Name**                  | **Assigned Task**                              |
 |------------------------------------|-----------------------------------------------|
-| Adorias, Jerome Giovanni C.        | Create the **User Model**                     |
+| Adorias, Jerome Giovanni C.        | Create the **User Model**  && INSTALL AND SETUP LARAVEL                    |
 | Bolinas, Justine Aris              | Create the **User Controller**                |
 | De La Cruz, Leovin C.              | Create the **User View (Blade Template)**     |
 | Dumogho, Marlo Eleuterio L.        | Create the **Migration Schema for Users**     |

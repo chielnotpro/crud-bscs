@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movie;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -41,7 +41,6 @@ class UserController extends Controller
         ]);
         
         return back()->with('success', 'User created successful!');
-        }
         
     }
 

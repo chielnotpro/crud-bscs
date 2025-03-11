@@ -47,7 +47,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Movie $movie)
+    public function show()
     {
         //
     }
@@ -57,20 +57,20 @@ class UserController extends Controller
      */
     public function edit()
     {
-       $request->validate([
-           'name' => 'required|string|max:255',
-           'email' => 'required|string|email|max:255|unique:users',
-           'password' => 'required|string|min:8|confirmed',
-       ])
+       
        return view('user.edit');
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update()
+    public function update(Request $request)
     {
-        
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
     }
 
     /**
@@ -80,4 +80,4 @@ class UserController extends Controller
     {
        
     }
-
+}

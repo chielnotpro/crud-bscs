@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movie;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -20,7 +20,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       
+       return view('user.create');
     }
 
     /**
@@ -28,8 +28,20 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
 
-       
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+        
+        return back()->with('success', 'User created successful!');
+        
     }
 
     /**
@@ -63,5 +75,4 @@ class UserController extends Controller
     {
        
     }
-}
 
